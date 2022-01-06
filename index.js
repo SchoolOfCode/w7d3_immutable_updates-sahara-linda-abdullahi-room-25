@@ -4,15 +4,20 @@
 export function addToEnd(array, item) {
  const arrayNew = [...array, item]
  return arrayNew;
-
-
 }
 
 // Immutably add an item to the beginning of an array
-export function addToBeginning(array, item) {}
+export function addToBeginning(array, item) {
+    const arrayNew = [item, ...array]
+    return arrayNew;
+}
 
 // Immutably insert an item at a specific position/index within an array
-export function insertItem(array, item, index) {}
+export function insertItem(array, item, index) {
+    const arrayNew = [...array.slice(0, index), item, ...array.slice(index)]
+
+    return arrayNew;
+}
 
 // Immutably replace an item at a specific position/index within an array
 export function replaceItem(array, item, index) {}
